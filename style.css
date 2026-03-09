@@ -202,10 +202,23 @@ body {
     max-width: 900px;
 }
 
-.title-layout i.fab.fa-github {
-    font-size: 100px;
-    color: var(--white);
+.title-layout .logos-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
     margin-bottom: 30px;
+}
+
+.title-layout .logos-container i {
+    font-size: 100px;
+}
+
+.title-layout .logos-container i.fa-github {
+    color: var(--white);
+}
+
+.title-layout .logos-container i.fa-git-alt {
+    color: #f14e32;
 }
 
 .two-column {
