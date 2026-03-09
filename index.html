@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a GitHub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Slide 1: Title_Slide -->
+    <div class="slide-container" id="slide1">
+        <div class="title-layout">
+            <i class="fab fa-github"></i>
+            <h1>Git y Github</h1>
+            <div class="highlight-boxes">
+                <div class="highlight-box">
+                    <i class="fa-solid fa-bolt" style="color: var(--accent-orange);"></i>
+                    <span>Optimizar tiempos</span>
+                </div>
+                <div class="highlight-box">
+                    <i class="fa-solid fa-shield-halved" style="color: var(--accent-blue);"></i>
+                    <span>Reducir riesgos</span>
+                </div>
+                <div class="highlight-box">
+                    <i class="fa-solid fa-medal" style="color: var(--accent-green);"></i>
+                    <span>Asegurar calidad</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+     INTRODUCCIÓN: GIT VS GITHUB
+     ========================================== -->
+    <div class="slide-container" id="slide-git-vs-github">
+        <h2 class="slide-title">Git vs. GitHub: ¿Cuál es la diferencia?</h2>
+        <div class="content-area">
+            <div class="two-column tiled">
+                <div style="border-top: 4px solid #f14e32;">
+                    <h3 style="color: #f14e32;"><i class="fa-brands fa-git-alt"></i> Git</h3>
+                    <p style="margin-bottom: 20px;">El <strong>motor interno</strong> que lleva el registro completo.
+                    </p>
+                    <ul>
+                        <li>Es un software (herramienta) de la línea de comandos.</li>
+                        <li>Se ejecuta <strong>localmente</strong> en la computadora de cada desarrollador.</li>
+                        <li>Lleva el historial y control de versiones de los archivos.</li>
+                        <li>No requiere internet para registrar instantáneas de trabajo.</li>
+                    </ul>
+                </div>
+                <div style="border-top: 4px solid var(--white);">
+                    <h3 style="color: var(--white);"><i class="fa-brands fa-github"></i> GitHub</h3>
+                    <p style="margin-bottom: 20px;">La <strong>central de colaboración</strong> en la web.</p>
+                    <ul>
+                        <li>Es un servicio privado de alojamiento en la <strong>nube</strong>.</li>
+                        <li>Permite que varios desarrolladores sincronicen su trabajo (requiere internet).</li>
+                        <li>Brinda herramientas para revisar código, manejar permisos y gobernanza.</li>
+                        <li>Actúa como la "copia maestra" segura del código de la empresa.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+     CONCEPTO 1: MÁQUINA DEL TIEMPO 
+     ========================================== -->
+
+    <!-- Slide 2: Concept 1 Features -->
+    <div class="slide-container" id="slide2">
+        <h2 class="slide-title">1. Funcionalidades de Auditoría y Trazabilidad</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-code-commit" style="color: var(--accent-blue);"></i></div>
+                    <h3>Commits (Instantáneas)</h3>
+                    <p>Son puntos de guardado inmutables. Cada vez que se guarda un cambio, Git registra los archivos
+                        modificados junto con el autor, la fecha y un mensaje descriptivo del porqué.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-user-secret" style="color: var(--accent-blue);"></i></div>
+                    <h3>Git Blame / Historial</h3>
+                    <p>Una herramienta de auditoría línea por línea. Permite hacer clic en cualquier parte del código y
+                        ver exactamente qué desarrollador la escribió y en qué momento preciso.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-clock-rotate-left" style="color: var(--accent-blue);"></i>
+                    </div>
+                    <h3>Git Revert (Rollbacks)</h3>
+                    <p>Si un <em>commit</em> introduce un error, esta función crea un "anti-cambio" automático que
+                        deshace el error sin alterar ni borrar el historial de lo que pasó, manteniendo la seguridad.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Concept 1 Example -->
+    <div class="slide-container" id="slide3">
+        <h2 class="slide-title">Caso Práctico: Un Error Crítico en Producción</h2>
+        <p style="margin-top: -30px; margin-bottom: 30px; color: var(--accent-orange); font-weight: 500;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Escenario: Se lanza una actualización importante y, de
+            repente, una funcionalidad clave deja de funcionar.
+        </p>
+        <div class="content-area">
+            <div class="two-column tiled">
+                <div class="comparison-tile-bad">
+                    <h3><i class="fa-solid fa-xmark"></i> Sin GitHub</h3>
+                    <p>El equipo entra en <strong>pánico</strong>.</p>
+                    <ul>
+                        <li>Revisamos manualmente cientos de archivos intentando adivinar quién tocó qué.</li>
+                        <li>Tratamos de deshacer los cambios "de memoria", corriendo el riesgo de romper otras cosas.
+                        </li>
+                        <li>Horas de inactividad afectando a los usuarios y al negocio.</li>
+                    </ul>
+                </div>
+                <div class="comparison-tile-good">
+                    <h3><i class="fa-solid fa-check"></i> Con GitHub</h3>
+                    <p>Mantenemos el <strong>control absoluto</strong>.</p>
+                    <ul>
+                        <li>Entramos al historial y vemos exactamente qué archivo se modificó hace dos horas.</li>
+                        <li>Con un solo clic presionamos <strong>"Revertir"</strong>.</li>
+                        <li>El sistema vuelve a la versión estable anterior en segundos.</li>
+                        <li>Investigamos el error con calma sin afectar a los usuarios.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+     CONCEPTO 2: EXPERIMENTACIÓN SEGURA 
+     ========================================== -->
+
+    <!-- Slide 4: Concept 2 Features -->
+    <div class="slide-container" id="slide4">
+        <h2 class="slide-title">2. Funcionalidades de Aislamiento y Paralelismo</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-code-branch" style="color: var(--accent-purple);"></i></div>
+                    <h3>Ramas (Branches)</h3>
+                    <p>Crean entornos de trabajo paralelos. Puedes clonar el proyecto principal (rama
+                        <code>main</code>), experimentar, romper cosas y crear nuevas funciones sin que el producto en
+                        vivo sufra daños.
+                    </p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-code-merge" style="color: var(--accent-purple);"></i></div>
+                    <h3>Git Merge</h3>
+                    <p>La capacidad de unir dos ramas. Cuando un equipo termina su trabajo en una rama aislada, Git
+                        combina inteligentemente ese código nuevo con el proyecto principal de forma segura.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-code-compare" style="color: var(--accent-purple);"></i>
+                    </div>
+                    <h3>Resolución de Conflictos</h3>
+                    <p>Si dos personas editan exactamente la misma línea, GitHub no sobrescribe los archivos al azar.
+                        Detiene el proceso y muestra una interfaz visual para decidir qué versión conservar.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 5: Concept 2 Example -->
+    <div class="slide-container" id="slide5">
+        <h2 class="slide-title">Caso Práctico: Trabajo Paralelo</h2>
+        <p style="margin-top: -30px; margin-bottom: 30px; color: var(--accent-orange); font-weight: 500;">
+            <i class="fa-solid fa-users"></i> Escenario: Un equipo necesita corregir un error urgente, mientras otro
+            desarrolla una nueva funcionalidad al mismo tiempo.
+        </p>
+        <div class="content-area">
+            <div class="two-column tiled">
+                <div class="comparison-tile-bad">
+                    <h3><i class="fa-solid fa-xmark"></i> Sin GitHub</h3>
+                    <p>Se generan <strong>cuellos de botella</strong>.</p>
+                    <ul>
+                        <li>Tienen que turnarse para trabajar en el código.</li>
+                        <li>Se envían archivos por correo o carpetas compartidas (.zip).</li>
+                        <li>El riesgo de sobrescribir accidentalmente el avance del compañero al guardar en el servidor
+                            central es altísimo.</li>
+                    </ul>
+                </div>
+                <div class="comparison-tile-good">
+                    <h3><i class="fa-solid fa-check"></i> Con GitHub</h3>
+                    <p>Logramos <strong>desarrollo concurrente</strong>.</p>
+                    <ul>
+                        <li>El producto principal (el tronco) está intacto y seguro.</li>
+                        <li>El equipo 1 crea su propia rama aislada para corregir el error.</li>
+                        <li>El equipo 2 crea su rama para la nueva funcionalidad.</li>
+                        <li>Ambos trabajan al mismo tiempo, equivocándose y probando cosas sin que el proyecto central
+                            sufra daño.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+     CONCEPTO 3: FILTROS DE CALIDAD 
+     ========================================== -->
+
+    <!-- Slide 6: Concept 3 Features -->
+    <div class="slide-container" id="slide6">
+        <h2 class="slide-title">3. Funcionalidades de Control de Calidad</h2>
+        <div class="content-area">
+            <div class="tiled-content">
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-code-pull-request" style="color: var(--accent-green);"></i>
+                    </div>
+                    <h3>Pull Requests (PRs)</h3>
+                    <p>Son peticiones formales para integrar código. Crean un espacio dedicado donde el equipo puede ver
+                        un resumen visual ("diff") de todo lo que se añadió o eliminó antes de aceptarlo.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-comments" style="color: var(--accent-green);"></i></div>
+                    <h3>Code Review (Revisión)</h3>
+                    <p>Dentro de un PR, los compañeros pueden dejar comentarios directamente sobre líneas de código
+                        específicas, sugiriendo mejoras de seguridad o de rendimiento antes de aprobar.</p>
+                </div>
+                <div class="tile">
+                    <div class="icon"><i class="fa-solid fa-lock" style="color: var(--accent-green);"></i></div>
+                    <h3>Protección de Ramas</h3>
+                    <p>Reglas estrictas configurables. Por ejemplo: <em>"Ningún código puede ir a producción sin ser
+                            aprobado por al menos 2 desarrolladores senior y pasar todas las pruebas automáticas"</em>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 7: Concept 3 Example -->
+    <div class="slide-container" id="slide7">
+        <h2 class="slide-title">Caso Práctico: La "Aduana" del Código</h2>
+        <p style="margin-top: -30px; margin-bottom: 30px; color: var(--accent-orange); font-weight: 500;">
+            <i class="fa-solid fa-magnifying-glass-check"></i> Escenario: Un desarrollador termina una nueva
+            funcionalidad y necesita integrarla al código principal de la empresa.
+        </p>
+        <div class="content-area">
+            <div class="two-column tiled">
+                <div class="comparison-tile-bad">
+                    <h3><i class="fa-solid fa-xmark"></i> Sin GitHub</h3>
+                    <p>Publicación a <strong>ciegas</strong>.</p>
+                    <ul>
+                        <li>El desarrollador simplemente copia y pega sus archivos en la carpeta principal de
+                            producción.</li>
+                        <li>Si hay un error oculto o una vulnerabilidad de seguridad, acaba de dañar todo el proyecto
+                            para los clientes.</li>
+                    </ul>
+                </div>
+                <div class="comparison-tile-good">
+                    <h3><i class="fa-solid fa-check"></i> Con GitHub</h3>
+                    <p>Calidad <strong>garantizada y auditada</strong>.</p>
+                    <ul>
+                        <li>El desarrollador levanta la mano y dice: "Terminé, solicito integrar mi trabajo" (Pull
+                            Request).</li>
+                        <li>El sistema bloquea la integración automáticamente.</li>
+                        <li>Otro miembro revisa el código línea por línea, deja comentarios y finalmente
+                            <strong>aprueba</strong> con su usuario.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==========================================
+     FREE VS PRO
+     ========================================== -->
+    <div class="slide-container" id="slide-free-vs-pro">
+        <h2 class="slide-title">Planes Individuales: Free vs. Pro</h2>
+        <div class="content-area">
+            <div class="two-column tiled">
+                <div style="border-top: 4px solid var(--text-muted);">
+                    <h3 style="color: var(--white);"><i class="fa-solid fa-seedling"></i> GitHub Free</h3>
+                    <p style="margin-bottom: 20px;">Todo lo básico para arrancar sin costo.</p>
+                    <ul style="font-size: 18px; padding-left: 20px;">
+                        <li>Almacenamiento (Storage): <strong>500 MB</strong> de paquetes de GitHub limitados.</li>
+                        <li>Acción GitHub (CI/CD): <strong>2,000 minutos/mes</strong> gratis para automatizar tareas.
+                        </li>
+                        <li>Codespaces: <strong>120 horas core/mes</strong> gratuitas en servidores virtuales limitados.
+                        </li>
+                        <li>Soporte: Solo acceso al soporte básico y la comunidad.</li>
+                        <li style="color: var(--accent-red);">Sin protección de ramas en repositorios privados.</li>
+                    </ul>
+                </div>
+                <div style="border-top: 4px solid var(--accent-orange);">
+                    <h3 style="color: var(--accent-orange);"><i class="fa-solid fa-crown"></i> GitHub Pro</h3>
+                    <p style="margin-bottom: 20px;">Superpoderes para desarrolladores avanzados ($4/mes).</p>
+                    <ul style="font-size: 18px; padding-left: 20px;">
+                        <li>Almacenamiento (Storage): <strong>2 GB</strong> de paquetes de GitHub.</li>
+                        <li>Acción GitHub (CI/CD): <strong>3,000 minutos/mes</strong> para builds más largos/frecuentes.
+                        </li>
+                        <li>Codespaces: <strong>180 horas core/mes</strong> con servidores virtuales más potentes.</li>
+                        <li>Soporte: Acceso directo vía email con SLA básico.</li>
+                        <li style="color: var(--accent-green);">Protección estricta de ramas incluso en repos privados.
+                        </li>
+                        <li style="color: var(--accent-green);">Wiki y GitHub Pages en repositorios privados.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
